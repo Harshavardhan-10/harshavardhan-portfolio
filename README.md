@@ -3,7 +3,7 @@
 A modern, responsive portfolio built to showcase my **projects, technical skills, professional experience, and software development journey**.
 
 ### Built With
-`Next.js` · `React` · `TypeScript` · `Tailwind CSS` · `Motion`
+`Next.js` · `TypeScript` · `Tailwind CSS` · `Motion`
 
 ### Live Website
 
