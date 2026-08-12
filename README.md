@@ -62,4 +62,4 @@ Place your images in `public/`:
 
 ## Deploy
 
-Deploy to [Vercel](https://vercel.com/new) (recommended) or your preferred platform — the project builds as a standard static/server-rendered Next.js app with `npm run build`.
+Deploy to [Vercel](https://vercel.com/new) (recommended) or your preferred platform.
