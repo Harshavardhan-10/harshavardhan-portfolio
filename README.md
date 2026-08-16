@@ -1,10 +1,18 @@
 # Harshavardhan — Portfolio
 
-A modern, responsive personal portfolio website built with Next.js (App Router), React, TypeScript, Tailwind CSS v4 and Motion. Features a dark/light theme toggle, animated sections, live GitHub repository showcase and detailed project case studies.
+A modern, responsive portfolio built to showcase my **projects, technical skills, professional experience, and software development journey**.
+
+### Built With
+`Next.js` · `TypeScript` · `Tailwind CSS` · `Motion`
+
+### Live Website
+
+**[harshavardhan-portfolio-dev.vercel.app](https://harshavardhan-portfolio-dev.vercel.app)**
+
 
 ## Features
 
-- **Dark/Light mode** toggle with `localStorage` persistence
+- **Dark/Light mode** toggle with `local Storage` persistence
 - **One-page portfolio** — Navbar, Hero, About, Experience, Skills, Projects, GitHub, Contact, Footer
 - **Live GitHub section** — fetches and displays your top repositories from the GitHub API
 - **Project detail pages** — case studies with overview, problem/solution, key features, tech stack and architecture images
@@ -54,4 +62,4 @@ Place your images in `public/`:
 
 ## Deploy
 
-Deploy to [Vercel](https://vercel.com/new) (recommended) or your preferred platform — the project builds as a standard static/server-rendered Next.js app with `npm run build`.
+Deploy to [Vercel](https://vercel.com/new) (recommended) or your preferred platform.
