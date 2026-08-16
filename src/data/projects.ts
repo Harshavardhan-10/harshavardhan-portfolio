@@ -23,6 +23,71 @@
 
 export const projects: Project[] = [
   {
+    slug: "wiseweb-ai",
+    title: "Wiseweb-AI",
+    tagline:
+      "AI-powered website intelligence and improvement platform with deep automated scans.",
+    category: "Full-Stack",
+    description:
+      "A website audit platform that crawls any site, scores health across nine categories and generates prioritized AI recommendations.",
+    year: "2026",
+    status: "Open Source",
+    images: {
+      primary: "/projects/wiseweb-ai/dashboard.png",
+      architecture: "/projects/wiseweb-ai/architecture.png",
+    },
+    overview: [
+      "Wiseweb-AI is an end-to-end website intelligence platform. Point it at any URL and it crawls the site, analyzes security, performance, accessibility, privacy, SEO, content and UX, then produces a single health score with concrete, prioritized fixes.",
+      "The stack is deliberately decoupled: a FastAPI backend, a Celery worker for long-running scans and a React SPA that polls scan progress in real time. Every category has its own analyzer, and an AI layer correlates findings into root-cause explanations so users see why something matters, not just what failed.",
+    ],
+    problem:
+      "Website audits are either shallow single-page checkers or expensive consultant reports. Owners need deep, repeatable analysis that explains what to fix, in what order, and why.",
+    solution:
+      "I built a multi-stage scan pipeline (crawl, nine analyzer categories, AI correlation and recommendations) with a resilience-first design: a failing analyzer never aborts the whole scan, and categories with zero findings stay unmeasured instead of falsely scoring 100.",
+    features: [
+      {
+        title: "Deep Automated Scans",
+        description:
+          "Crawls the site and analyzes security, performance, SEO, UX, accessibility, privacy, content and more.",
+        icon: "gauge",
+      },
+      {
+        title: "AI Recommendations",
+        description:
+          "Root-cause correlation ranks fixes P0 to P3 with evidence-backed explanations.",
+        icon: "brain",
+      },
+      {
+        title: "Health Scoring",
+        description:
+          "Category scores, progress tracking and trends across re-scans of the same site.",
+        icon: "chart",
+      },
+      {
+        title: "Competitive Analysis",
+        description:
+          "Compare your site against competitors to find gaps and opportunities.",
+        icon: "users",
+      },
+    ],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "FastAPI",
+      "Python",
+      "SQLAlchemy",
+      "Celery",
+      "Redis",
+      "Playwright",
+      "Tailwind CSS",
+    ],
+    links: {
+      github: "https://github.com/Harshavardhan-10/wiseweb-ai",
+      demo: "https://wiseweb-ai.vercel.app",
+    },
+  },
+  {
     slug: "smart-expense-manager",
     title: "Smart Expense Manager",
     tagline:
@@ -143,66 +208,6 @@ export const projects: Project[] = [
     ],
     links: {
       github: "https://github.com/Harshavardhan-10/drowsiness-detection",
-    },
-  },
-  {
-    slug: "phishing-detection",
-    title: "Phishing URL Detection",
-    tagline:
-      "Machine-learning classifier that flags phishing websites before you click.",
-    category: "Machine Learning",
-    description:
-      "A phishing URL classifier trained on lexical and domain features with 96% precision.",
-    year: "2024",
-    status: "Research",
-    images: {
-      primary: "/projects/phishing-detection/model.png",
-    },
-    overview: [
-      "Phishing remains one of the most common attack vectors. This project trains a supervised classifier that inspects URL structure, domain age and lexical patterns to flag malicious links with 96% precision on a held-out test set.",
-      "The solution ships as a REST API and a small browser-extension companion. Feature engineering focuses on signals that are cheap to compute (no external page loading), making the model fast enough to evaluate links in real time.",
-    ],
-    problem:
-      "Malicious links hide inside emails, SMS and messaging apps. Blacklist-based filters are reactive and miss brand-new domains, while full page-analysis is slow and privacy-invasive.",
-    solution:
-      "I engineered a feature set from URL lexical properties and domain metadata, trained a Gradient Boosting classifier and wrapped it in a Flask API with confidence scores, plus a lightweight Chrome extension for one-click checks.",
-    features: [
-      {
-        title: "High Precision",
-        description:
-          "96% precision with explainable confidence scores for every prediction.",
-        icon: "shield",
-      },
-      {
-        title: "Lexical Feature Engine",
-        description:
-          "Analyses URL structure, suspicious keywords and domain patterns.",
-        icon: "search",
-      },
-      {
-        title: "REST API",
-        description:
-          "Simple JSON API to scan any URL from your own applications.",
-        icon: "zap",
-      },
-      {
-        title: "Browser Extension",
-        description:
-          "One-click URL scanning directly from the address bar context menu.",
-        icon: "lock",
-      },
-    ],
-    techStack: [
-      "Python",
-      "Scikit-learn",
-      "Pandas",
-      "NumPy",
-      "Flask",
-      "BeautifulSoup",
-      "XGBoost",
-    ],
-    links: {
-      github: "https://github.com/Harshavardhan-10/phishing-detection",
     },
   },
   {

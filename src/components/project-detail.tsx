@@ -97,7 +97,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
           <div className="relative overflow-hidden rounded-[1.6rem] border border-border bg-card">
             <AppImage
               src={project.images.primary}
-              alt={`${project.title} â€” main view`}
+              alt={`${project.title} - main view`}
               width={1280}
               height={720}
               className="aspect-[16/9] w-full object-cover"
@@ -218,7 +218,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
             <div className="relative mt-6 overflow-hidden rounded-2xl border border-border bg-card">
               <AppImage
                 src={project.images.architecture}
-                alt={`${project.title} â€” architecture diagram`}
+                alt={`${project.title} - architecture diagram`}
                 width={1280}
                 height={720}
                 className="aspect-[16/9] w-full object-contain"
