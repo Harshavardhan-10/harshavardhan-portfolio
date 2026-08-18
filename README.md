@@ -7,7 +7,7 @@ A modern, responsive portfolio built to showcase my **projects, technical skills
 
 ### Live Website
 
-**[harshavardhan-portfolio](https://harshavardhan-portfolio-10.vercel.app/)**
+**[harshavardhan-portfolio](https://harshavardhan-portfolio-dev.vercel.app/)**
 
 
 ## Features
