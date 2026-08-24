@@ -14,26 +14,6 @@ const iconMap = {
   languages: Languages,
 } as const;
 
-function SkillBar({ name, level }: { name: string; level: number }) {
-  return (
-    <div>
-      <div className="mb-1.5 flex items-center justify-between text-sm">
-        <span className="font-medium">{name}</span>
-        <span className="text-xs text-muted">{level}%</span>
-      </div>
-      <div className="h-1.5 overflow-hidden rounded-full bg-foreground/[0.08]">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="h-full rounded-full bg-gradient-to-r from-violet-500 via-indigo-400 to-cyan-400"
-        />
-      </div>
-    </div>
-  );
-}
-
 export default function Skills() {
   return (
     <section id="skills" className="relative py-24 sm:py-32">
@@ -64,7 +44,7 @@ export default function Skills() {
                 transition={{ duration: 0.45, delay: i * 0.07 }}
                 className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-xl hover:shadow-violet-900/20"
               >
-                <div className="mb-6 flex items-center gap-3">
+                <div className="mb-5 flex items-center gap-3">
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600/20 to-cyan-500/20 text-violet-700 dark:text-violet-300 transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-5 w-5" />
                   </span>
@@ -72,15 +52,17 @@ export default function Skills() {
                     {category.title}
                   </h3>
                 </div>
-                <div className="flex flex-col gap-4">
+                <ul className="flex flex-col gap-2.5">
                   {category.skills.map((skill) => (
-                    <SkillBar
-                      key={skill.name}
-                      name={skill.name}
-                      level={skill.level}
-                    />
+                    <li key={skill} className="flex items-center gap-2.5 text-sm text-muted">
+                      <span
+                        aria-hidden="true"
+                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400"
+                      />
+                      {skill}
+                    </li>
                   ))}
-                </div>
+                </ul>
               </motion.div>
             );
           })}
