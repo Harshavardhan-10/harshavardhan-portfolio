@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1220" viewBox="0 0 1000 1220" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#000"/>
+    </marker>
+  </defs>
+  <style>
+    .b{fill:#ffffff;stroke:#000000;stroke-width:1.5}
+    .t{fill:#000000;font-size:13px;font-weight:600;text-anchor:middle}
+    .s{fill:#000000;font-size:11px;text-anchor:middle}
+    .l{fill:#000000;font-size:11px}
+    .f{stroke:#000000;stroke-width:1.5;fill:none}
+  </style>
+
+  <rect x="0" y="0" width="1000" height="1220" fill="#ffffff"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#000">Wiseweb-AI</text>
+
+  <!-- L1 You -->
+  <rect class="b" x="380" y="92" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="116">You</text>
+  <text class="s" x="510" y="133">browser</text>
+
+  <!-- L2 React Dashboard -->
+  <rect class="b" x="380" y="204" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="228">React Dashboard</text>
+  <text class="s" x="510" y="245">Vite SPA · React Query</text>
+
+  <!-- L3 FastAPI API -->
+  <rect class="b" x="380" y="316" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="340">FastAPI API</text>
+  <text class="s" x="510" y="357">/api/v1 · JWT · rate limit</text>
+
+  <!-- L4 Redis Queue -->
+  <rect class="b" x="380" y="428" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="452">Redis Queue</text>
+  <text class="s" x="510" y="469">Celery broker</text>
+
+  <!-- L5 Celery Worker -->
+  <rect class="b" x="380" y="540" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="564">Celery Worker</text>
+  <text class="s" x="510" y="581">run_scan task · orchestrator</text>
+
+  <!-- L6 Crawler -->
+  <rect class="b" x="380" y="652" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="676">Crawler</text>
+  <text class="s" x="510" y="693">robots.txt · SSRF-guarded httpx</text>
+
+  <!-- L7 Eight Analyzers -->
+  <rect class="b" x="380" y="764" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="788">Eight Analyzers</text>
+  <text class="s" x="510" y="805">security · speed · SEO · UX +4</text>
+
+  <!-- L8 Findings Store -->
+  <rect class="b" x="380" y="876" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="900">Findings Store</text>
+  <text class="s" x="510" y="917">PostgreSQL findings + evidence</text>
+
+  <!-- L9 Scoring Engine -->
+  <rect class="b" x="380" y="988" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="1012">Scoring Engine</text>
+  <text class="s" x="510" y="1029">severity deductions · industry weights</text>
+
+  <!-- L10 AI Pipeline -->
+  <rect class="b" x="380" y="1100" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="1124">AI Pipeline</text>
+  <text class="s" x="510" y="1141">root causes · summary · fallbacks</text>
+
+  <!-- main chain -->
+  <line class="f" x1="510" y1="148" x2="510" y2="200" marker-end="url(#a)"/>
+  <text class="l" x="500" y="180" text-anchor="end">open dashboard</text>
+
+  <line class="f" x1="510" y1="260" x2="510" y2="312" marker-end="url(#a)"/>
+  <text class="l" x="500" y="292" text-anchor="end">start scan</text>
+
+  <!-- progress poll pair -->
+  <line class="f" x1="546" y1="316" x2="546" y2="264" marker-end="url(#a)"/>
+  <text class="l" x="556" y="292">progress poll</text>
+
+  <line class="f" x1="510" y1="372" x2="510" y2="424" marker-end="url(#a)"/>
+  <text class="l" x="500" y="404" text-anchor="end">queue job</text>
+
+  <line class="f" x1="510" y1="484" x2="510" y2="536" marker-end="url(#a)"/>
+  <text class="l" x="500" y="516" text-anchor="end">pick job</text>
+
+  <line class="f" x1="510" y1="596" x2="510" y2="648" marker-end="url(#a)"/>
+  <text class="l" x="500" y="628" text-anchor="end">crawl site</text>
+
+  <line class="f" x1="510" y1="708" x2="510" y2="760" marker-end="url(#a)"/>
+  <text class="l" x="500" y="740" text-anchor="end">feed pages</text>
+
+  <line class="f" x1="510" y1="820" x2="510" y2="872" marker-end="url(#a)"/>
+  <text class="l" x="500" y="852" text-anchor="end">save findings</text>
+
+  <line class="f" x1="510" y1="932" x2="510" y2="984" marker-end="url(#a)"/>
+  <text class="l" x="500" y="964" text-anchor="end">weigh severity</text>
+
+  <line class="f" x1="510" y1="1044" x2="510" y2="1096" marker-end="url(#a)"/>
+  <text class="l" x="500" y="1076" text-anchor="end">rank fixes P0-P3</text>
+
+  <!-- loop: analyzer isolation 7 -> 5 -->
+  <path class="f" d="M 380,792 H 220 V 568 H 376" marker-end="url(#a)"/>
+  <text class="l" x="228" y="686">one checker fails? scan goes on</text>
+
+  <!-- loop: results read API 8 -> 3 -->
+  <path class="f" d="M 380,904 H 130 V 344 H 376" marker-end="url(#a)"/>
+  <text class="l" x="138" y="630">results API reads store</text>
+
+  <!-- loop: report back 10 -> 2 -->
+  <path class="f" d="M 640,1128 H 900 V 232 H 644" marker-end="url(#a)"/>
+  <text class="l" x="772" y="222" text-anchor="middle">open report</text>
+</svg>

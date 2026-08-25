@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1220" viewBox="0 0 1000 1220" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#000"/>
+    </marker>
+  </defs>
+  <style>
+    .b{fill:#ffffff;stroke:#000000;stroke-width:1.5}
+    .t{fill:#000000;font-size:13px;font-weight:600;text-anchor:middle}
+    .s{fill:#000000;font-size:11px;text-anchor:middle}
+    .l{fill:#000000;font-size:11px}
+    .f{stroke:#000000;stroke-width:1.5;fill:none}
+  </style>
+
+  <rect x="0" y="0" width="1000" height="1220" fill="#ffffff"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#000">Drowsiness Detection System</text>
+
+  <!-- L1 Webcam -->
+  <rect class="b" x="380" y="92" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="116">Webcam</text>
+  <text class="s" x="510" y="133">react-webcam feed</text>
+
+  <!-- L2 Frame Sender -->
+  <rect class="b" x="380" y="204" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="228">Frame Sender</text>
+  <text class="s" x="510" y="245">JPEG every ~50 ms</text>
+
+  <!-- L3 WS Server -->
+  <rect class="b" x="380" y="316" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="340">WS Server</text>
+  <text class="s" x="510" y="357">/ws/detect · FastAPI</text>
+
+  <!-- L4 Decoder -->
+  <rect class="b" x="380" y="428" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="452">Decoder</text>
+  <text class="s" x="510" y="469">base64 → NumPy → OpenCV</text>
+
+  <!-- L5 Face Mesh -->
+  <rect class="b" x="380" y="540" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="564">Face Mesh</text>
+  <text class="s" x="510" y="581">MediaPipe · 468 points</text>
+
+  <!-- L6 parallel: Eye / Mouth / Points -->
+  <rect class="b" x="85" y="652" width="250" height="64" rx="8"/>
+  <text class="t" x="210" y="678">Eye Metric</text>
+  <text class="s" x="210" y="695">EAR, closed below 0.25?</text>
+
+  <rect class="b" x="385" y="652" width="250" height="64" rx="8"/>
+  <text class="t" x="510" y="678">Mouth Metric</text>
+  <text class="s" x="510" y="695">MAR yawn above 0.75?</text>
+
+  <rect class="b" x="685" y="652" width="250" height="64" rx="8"/>
+  <text class="t" x="810" y="678">Canvas Points</text>
+  <text class="s" x="810" y="695">sent back for overlay</text>
+
+  <!-- L7 State Machine -->
+  <rect class="b" x="380" y="776" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="800">State Machine</text>
+  <text class="s" x="510" y="817">closed-eye frames + yawn count</text>
+
+  <!-- L8 Score Ratchet -->
+  <rect class="b" x="380" y="888" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="912">Score Ratchet</text>
+  <text class="s" x="510" y="929">0-100 · only rises · capped</text>
+
+  <!-- L9 Judge -->
+  <rect class="b" x="380" y="1000" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="1024">Judge</text>
+  <text class="s" x="510" y="1041">NORMAL · WARNING · DROWSY</text>
+
+  <!-- L10 Alarm -->
+  <rect class="b" x="380" y="1112" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="1136">Alarm</text>
+  <text class="s" x="510" y="1153">siren audio + red modal</text>
+
+  <!-- main chain -->
+  <line class="f" x1="510" y1="148" x2="510" y2="200" marker-end="url(#a)"/>
+  <text class="l" x="500" y="180" text-anchor="end">capture</text>
+
+  <line class="f" x1="510" y1="260" x2="510" y2="312" marker-end="url(#a)"/>
+  <text class="l" x="500" y="292" text-anchor="end">stream frame</text>
+
+  <line class="f" x1="510" y1="372" x2="510" y2="424" marker-end="url(#a)"/>
+  <text class="l" x="500" y="404" text-anchor="end">receive JSON</text>
+
+  <line class="f" x1="510" y1="484" x2="510" y2="536" marker-end="url(#a)"/>
+  <text class="l" x="500" y="516" text-anchor="end">decode pixels</text>
+
+  <!-- split to three checks -->
+  <line class="f" x1="510" y1="596" x2="510" y2="648" marker-end="url(#a)"/>
+  <path class="f" d="M 510,596 V 624 H 210 V 648" marker-end="url(#a)"/>
+  <path class="f" d="M 510,596 V 624 H 810 V 648" marker-end="url(#a)"/>
+  <text class="l" x="520" y="620">landmarks out</text>
+
+  <!-- merge into state machine -->
+  <line class="f" x1="510" y1="716" x2="510" y2="772" marker-end="url(#a)"/>
+  <path class="f" d="M 210,716 V 746 H 450 V 772" marker-end="url(#a)"/>
+  <path class="f" d="M 810,716 V 746 H 570 V 772" marker-end="url(#a)"/>
+  <text class="l" x="520" y="738">all clues</text>
+
+  <line class="f" x1="510" y1="832" x2="510" y2="884" marker-end="url(#a)"/>
+  <text class="l" x="500" y="864" text-anchor="end">counters ready</text>
+
+  <line class="f" x1="510" y1="944" x2="510" y2="996" marker-end="url(#a)"/>
+  <text class="l" x="500" y="976" text-anchor="end">score vs bands</text>
+
+  <line class="f" x1="510" y1="1056" x2="510" y2="1108" marker-end="url(#a)"/>
+  <text class="l" x="500" y="1088" text-anchor="end">DROWSY!</text>
+
+  <!-- loop: next frame 2 -> 1 -->
+  <path class="f" d="M 380,232 H 310 V 120 H 376" marker-end="url(#a)"/>
+  <text class="l" x="318" y="184">next frame</text>
+
+  <!-- loop: dismiss / reset 10 -> 7 -->
+  <path class="f" d="M 380,1140 H 180 V 804 H 376" marker-end="url(#a)"/>
+  <text class="l" x="188" y="980">dismiss button · grace window</text>
+
+  <!-- loop: status back to browser 9 -> 2 -->
+  <path class="f" d="M 640,1028 H 900 V 232 H 644" marker-end="url(#a)"/>
+  <text class="l" x="772" y="222" text-anchor="middle">status + alert flag return</text>
+</svg>

@@ -1,5 +1,5 @@
 ﻿import Link from "next/link";
-import { ArrowUpRight, FolderGit2, Star } from "lucide-react";
+import { ArrowUpRight, FolderGit2 } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { AppImage } from "@/components/app-image";
 import { Badge } from "@/components/ui/badge";
@@ -60,11 +60,7 @@ export function ProjectCard({ project }: { project: Project }) {
           ) : null}
         </div>
 
-        <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
-          <span className="flex items-center gap-1.5 text-xs text-muted">
-            <Star className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400/80" />
-            Case study
-          </span>
+        <div className="mt-5 flex items-center justify-end border-t border-border pt-4">
           <span className="flex items-center gap-1.5 text-sm font-medium text-violet-700 dark:text-violet-300 transition-all duration-300 group-hover:gap-2.5">
             View project
             <ArrowUpRight className="h-4 w-4" />

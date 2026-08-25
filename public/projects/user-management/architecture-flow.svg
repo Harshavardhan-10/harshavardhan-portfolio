@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1220" viewBox="0 0 1000 1220" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#000"/>
+    </marker>
+  </defs>
+  <style>
+    .b{fill:#ffffff;stroke:#000000;stroke-width:1.5}
+    .t{fill:#000000;font-size:13px;font-weight:600;text-anchor:middle}
+    .s{fill:#000000;font-size:11px;text-anchor:middle}
+    .l{fill:#000000;font-size:11px}
+    .f{stroke:#000000;stroke-width:1.5;fill:none}
+  </style>
+
+  <rect x="0" y="0" width="1000" height="1220" fill="#ffffff"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#000">User Management System</text>
+
+  <!-- L1 You -->
+  <rect class="b" x="380" y="92" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="116">You</text>
+  <text class="s" x="510" y="133">browser</text>
+
+  <!-- L2 Template Pages -->
+  <rect class="b" x="380" y="204" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="228">Template Pages</text>
+  <text class="s" x="510" y="245">server-rendered Bootstrap 5</text>
+
+  <!-- L3 URL Router -->
+  <rect class="b" x="380" y="316" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="340">URL Router</text>
+  <text class="s" x="510" y="357">Django urls.py dispatch</text>
+
+  <!-- L4 Form Guards -->
+  <rect class="b" x="380" y="428" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="452">Form Guards</text>
+  <text class="s" x="510" y="469">CSRF token + field validation</text>
+
+  <!-- L5 Session Gate -->
+  <rect class="b" x="380" y="540" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="564">Session Gate</text>
+  <text class="s" x="510" y="581">sessionid cookie · banned blocked</text>
+
+  <!-- L6 PBKDF2 Locker -->
+  <rect class="b" x="380" y="652" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="676">PBKDF2 Locker</text>
+  <text class="s" x="510" y="693">hashes and verifies passwords</text>
+
+  <!-- L7 SQLite Store -->
+  <rect class="b" x="380" y="764" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="788">SQLite Store</text>
+  <text class="s" x="510" y="805">User + Profile rows via signal</text>
+
+  <!-- L8 Admin Panel -->
+  <rect class="b" x="380" y="876" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="900">Admin Panel</text>
+  <text class="s" x="510" y="917">staff-only · search · edit · delete</text>
+
+  <!-- L9 Ban Switch -->
+  <rect class="b" x="380" y="988" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="1012">Ban Switch</text>
+  <text class="s" x="510" y="1029">is_active on / off</text>
+
+  <!-- L10 Reset Mailer -->
+  <rect class="b" x="380" y="1100" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="1124">Reset Mailer</text>
+  <text class="s" x="510" y="1141">signed token link</text>
+
+  <!-- main chain -->
+  <line class="f" x1="510" y1="148" x2="510" y2="200" marker-end="url(#a)"/>
+  <text class="l" x="500" y="180" text-anchor="end">open page</text>
+
+  <line class="f" x1="510" y1="260" x2="510" y2="312" marker-end="url(#a)"/>
+  <text class="l" x="500" y="292" text-anchor="end">send form</text>
+
+  <line class="f" x1="510" y1="372" x2="510" y2="424" marker-end="url(#a)"/>
+  <text class="l" x="500" y="404" text-anchor="end">dispatch view</text>
+
+  <line class="f" x1="510" y1="484" x2="510" y2="536" marker-end="url(#a)"/>
+  <text class="l" x="500" y="516" text-anchor="end">valid data</text>
+
+  <line class="f" x1="510" y1="596" x2="510" y2="648" marker-end="url(#a)"/>
+  <text class="l" x="500" y="628" text-anchor="end">hash check</text>
+
+  <line class="f" x1="510" y1="708" x2="510" y2="760" marker-end="url(#a)"/>
+  <text class="l" x="500" y="740" text-anchor="end">load / save user</text>
+
+  <line class="f" x1="510" y1="820" x2="510" y2="872" marker-end="url(#a)"/>
+  <text class="l" x="500" y="852" text-anchor="end">manage users</text>
+
+  <!-- pair return 8 -> 7 -->
+  <line class="f" x1="546" y1="876" x2="546" y2="824" marker-end="url(#a)"/>
+  <text class="l" x="556" y="852">user list</text>
+
+  <line class="f" x1="510" y1="932" x2="510" y2="984" marker-end="url(#a)"/>
+  <text class="l" x="500" y="964" text-anchor="end">deactivate / activate</text>
+
+  <!-- loop: ban blocks login 9 -> 5 -->
+  <path class="f" d="M 640,1016 H 790 V 568 H 644" marker-end="url(#a)"/>
+  <text class="l" x="798" y="800">banned? login refused</text>
+
+  <!-- loop: forgot password 3 -> 10 -->
+  <path class="f" d="M 380,344 H 110 V 1128 H 376" marker-end="url(#a)"/>
+  <text class="l" x="118" y="740">forgot password?</text>
+
+  <!-- loop: reset link back 10 -> 2 -->
+  <path class="f" d="M 640,1128 H 900 V 232 H 644" marker-end="url(#a)"/>
+  <text class="l" x="772" y="222" text-anchor="middle">reset link opens page</text>
+</svg>

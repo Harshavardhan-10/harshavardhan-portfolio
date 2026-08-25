@@ -26,64 +26,64 @@ export const projects: Project[] = [
     slug: "wiseweb-ai",
     title: "Wiseweb-AI",
     tagline:
-      "AI-powered website intelligence and improvement platform with deep automated scans.",
+      "AI-powered website intelligence platform with deep automated scans and explainable health scores.",
     category: "Full-Stack",
     description:
-      "A website audit platform that crawls any site, scores health across nine categories and generates prioritized AI recommendations.",
+      "A website audit platform that crawls any site, analyzes it across eight categories and turns evidence-backed findings into prioritized AI recommendations.",
     year: "2026",
     status: "Open Source",
     images: {
       primary: "/projects/wiseweb-ai/dashboard.png",
-      architecture: "/projects/wiseweb-ai/architecture.png",
+      architecture: "/projects/wiseweb-ai/architecture-flow.svg",
     },
     overview: [
-      "Wiseweb-AI is an end-to-end website intelligence platform. Point it at any URL and it crawls the site, analyzes security, performance, accessibility, privacy, SEO, content and UX, then produces a single health score with concrete, prioritized fixes.",
-      "The stack is deliberately decoupled: a FastAPI backend, a Celery worker for long-running scans and a React SPA that polls scan progress in real time. Every category has its own analyzer, and an AI layer correlates findings into root-cause explanations so users see why something matters, not just what failed.",
+      "Wiseweb-AI is an end-to-end website intelligence platform built as a React SPA backed by a FastAPI API, a Celery worker and PostgreSQL. Point it at any URL and a passive crawler collects pages, resources and technologies while honoring robots.txt, with SSRF validation on every request and redirect hop.",
+      "Eight analyzers - security, performance, accessibility, privacy, SEO, content, UX and architecture - produce findings backed by stored evidence such as HTTP headers, cookies and DNS records. A scoring engine converts severity-weighted deductions into explainable scores, and an AI pipeline correlates root causes into P0-P3 ranked fixes with deterministic fallbacks whenever no AI provider key is configured.",
     ],
     problem:
       "Website audits are either shallow single-page checkers or expensive consultant reports. Owners need deep, repeatable analysis that explains what to fix, in what order, and why.",
     solution:
-      "I built a multi-stage scan pipeline (crawl, nine analyzer categories, AI correlation and recommendations) with a resilience-first design: a failing analyzer never aborts the whole scan, and categories with zero findings stay unmeasured instead of falsely scoring 100.",
+      "I built a multi-stage scan pipeline - crawl, eight analyzer categories, weighted scoring and AI correlation - with a resilience-first design: a failing analyzer never aborts the scan, unmeasured categories stay unscored instead of falsely showing 100, and every AI output has a grounded rule-based fallback.",
     features: [
       {
         title: "Deep Automated Scans",
         description:
-          "Crawls the site and analyzes security, performance, SEO, UX, accessibility, privacy, content and more.",
+          "Robots-aware crawler records pages, resources and detected technologies with SSRF guards on every fetch.",
         icon: "gauge",
       },
       {
-        title: "AI Recommendations",
+        title: "Evidence-Based Findings",
         description:
-          "Root-cause correlation ranks fixes P0 to P3 with evidence-backed explanations.",
-        icon: "brain",
+          "Each issue stores typed evidence - headers, cookies, DNS, HTML elements - behind filterable API endpoints.",
+        icon: "search",
       },
       {
-        title: "Health Scoring",
+        title: "Explainable Scoring",
         description:
-          "Category scores, progress tracking and trends across re-scans of the same site.",
+          "Severity deductions with industry-specific weights produce transparent per-category and overall health scores.",
         icon: "chart",
       },
       {
-        title: "Competitive Analysis",
+        title: "AI Fixes & Competitors",
         description:
-          "Compare your site against competitors to find gaps and opportunities.",
-        icon: "users",
+          "Root-cause correlation ranks fixes P0-P3 and score-gap comparison benchmarks saved competitor sites.",
+        icon: "brain",
       },
     ],
     techStack: [
       "React",
       "TypeScript",
       "Vite",
+      "React Query",
       "FastAPI",
-      "Python",
       "SQLAlchemy",
       "Celery",
       "Redis",
+      "PostgreSQL",
       "Playwright",
-      "Tailwind CSS",
     ],
     links: {
-      github: "https://github.com/Harshavardhan-10/wiseweb-ai",
+      github: "https://github.com/Harshavardhan-10/Wiseweb-AI",
       demo: "https://wiseweb-ai.vercel.app",
     },
   },
@@ -91,183 +91,176 @@ export const projects: Project[] = [
     slug: "smart-expense-manager",
     title: "Smart Expense Manager",
     tagline:
-      "Track, categorise and visualise daily spending with intelligent insights.",
+      "Track expenses, set monthly budgets and get statistical plus AI spending insights.",
     category: "Full-Stack",
     description:
-      "A complete expense tracking platform with dashboards, budgets and AI-powered spending insights.",
+      "A full-stack expense tracker - React SPA with Chart.js dashboards over a FastAPI + SQLAlchemy backend featuring recurring-payment detection, anomaly insights and CSV import/export.",
     year: "2025",
     status: "Open Source",
     images: {
       primary: "/projects/smart-expense-manager/dashboard.png",
-      architecture: "/projects/smart-expense-manager/architecture.png",
+      architecture: "/projects/smart-expense-manager/architecture-flow.svg",
     },
     overview: [
-      "Smart Expense Manager is a full-stack finance app that helps users log transactions, set monthly budgets and discover spending patterns through interactive dashboards. Built with a modern monorepo architecture, it keeps the UI snappy and the data consistent in real time.",
-      "The project demonstrates production-grade patterns: server-side rendering, API routes with validation, database transactions and chart-driven analytics. It was designed with performance budgets in mind  the main dashboard hydrates in under two seconds on a mid-range phone.",
+      "Spentrax is a two-app finance platform: a React single-page app (Vite, Chart.js) talking to a FastAPI server through JWT-authenticated REST endpoints. Data lives in SQLAlchemy models migrated by Alembic - SQLite in development, PostgreSQL in production on Render.",
+      "Beyond plain CRUD, detection is statistical rather than hand-waved: recurring payments require three or more similar charges on matching intervals, anomalies are z-score outliers per category, and optional OpenAI-compatible calls only categorize or explain - never detect - falling back to deterministic keyword rules when no provider is configured.",
     ],
     problem:
-      "Most expense trackers are either overly complex or have poor UX. Users wanted a tool that is quick to log, delightful to explore and smart enough to surface useful insights like unusual spending or budget burn rate.",
+      "Most expense trackers stop at storage. Useful patterns - subscriptions quietly renewing, unusual spending spikes, budget burn rate - stay hidden, and importing years of bank history is usually painful or impossible.",
     solution:
-      "I designed a minimal logging flow (add an expense in under 5 seconds), category auto-detection, monthly budgets with progress rings, and a spending analytics dashboard with trend charts, top merchants and anomaly alerts.",
+      "I built automatic post-save checks that flag recurring candidates and z-score anomalies into an insight feed, per-category monthly budgets with spent/remaining/status math, one-call dashboard aggregates and round-trip CSV import/export with duplicate detection.",
     features: [
       {
         title: "Instant Expense Logging",
         description:
-          "Quick-add modal with smart category prediction and recurring transaction support.",
+          "Validated CRUD with filters, search, sort and pagination, plus AI category suggestions while you type.",
         icon: "wallet",
       },
       {
-        title: "Analytics Dashboard",
+        title: "Statistical Detection",
         description:
-          "Interactive charts for spending trends, category breakdown and budget health.",
+          "Recurring subscriptions (three-plus matches) and z-score anomalies become insight rows automatically after each save.",
+        icon: "gauge",
+      },
+      {
+        title: "Budgets & Analytics",
+        description:
+          "Monthly category budgets with status thresholds and Chart.js trend, breakdown and month-over-month views.",
         icon: "chart",
       },
       {
-        title: "Smart Alerts",
+        title: "CSV Round-Trip",
         description:
-          "Anomaly and budget-limit notifications delivered via email and in-app.",
-        icon: "bell",
-      },
-      {
-        title: "Secure & Private",
-        description:
-          "JWT-based auth, encrypted data at rest and granular user permissions.",
-        icon: "shield",
+          "Import statements with duplicate checks or export everything; AI insights degrade gracefully to rules offline.",
+        icon: "zap",
       },
     ],
     techStack: [
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Prisma",
-      "Tailwind CSS",
-      "Recharts",
+      "React",
+      "Vite",
+      "Chart.js",
+      "FastAPI",
+      "SQLAlchemy",
+      "Alembic",
+      "PostgreSQL",
+      "JWT",
+      "Pydantic",
     ],
     links: {
-      github: "https://github.com/Harshavardhan-10/smart-expense-manager",
-      demo: "https://smart-expense-manager.vercel.app",
+      github: "https://github.com/Harshavardhan-10/Spentrax",
     },
   },
   {
     slug: "drowsiness-detection",
     title: "Drowsiness Detection System",
-    tagline:
-      "Real-time driver drowsiness detection powered by computer vision.",
+    tagline: "Real-time driver fatigue detection streamed from your browser webcam.",
     category: "AI / ML",
     description:
-      "A real-time system that detects driver fatigue using facial landmarks and alerts instantly.",
+      "A browser-and-server system: React captures webcam frames while a FastAPI WebSocket service scores EAR/MAR face landmarks via MediaPipe and triggers audio-visual alerts.",
     year: "2024",
     status: "Research",
     images: {
       primary: "/projects/drowsiness-detection/application.png",
-      architecture: "/projects/drowsiness-detection/detection.png",
+      architecture: "/projects/drowsiness-detection/architecture-flow.svg",
     },
     overview: [
-      "This project tackles road safety with computer vision: it analyses webcam video frames to estimate eye-aspect-ratio and head posture in real time, detecting micro-sleep moments before they become dangerous. Built with OpenCV and MediaPipe, it runs at 30 FPS on a standard laptop.",
-      "The application includes a live preview, configurable sensitivity, and an audible + visual alarm. A Flask API wrapper also exposes detection results for integration with vehicle telematics systems.",
+      "The app pairs a React dashboard with a FastAPI WebSocket engine. The browser grabs JPEG frames roughly ten times a second and streams them to /ws/detect; MediaPipe Face Mesh locates 468 landmarks, from which eye (EAR) and mouth (MAR) aspect ratios are computed for every frame.",
+      "A state machine counts consecutive closed-eye frames and deduplicated yawns into a monotonic 0-100 drowsiness score with NORMAL, WARNING and DROWSY bands. Alarms live entirely client-side: looping alarm audio, an animated dismissible modal and a canvas overlay drawing the exact landmark polygons state-colored.",
     ],
     problem:
-      "Driver fatigue causes thousands of accidents every year. Existing detection hardware is expensive, while software solutions were often too slow or too inaccurate for real-time use.",
+      "Driver fatigue causes thousands of crashes every year, but most software detectors are desktop-only scripts that are slow, inaccurate or impossible to try without installing anything.",
     solution:
-      "I implemented a lightweight pipeline using MediaPipe facial landmarks to compute EAR (eye aspect ratio) and MAR (mouth aspect ratio), with an adaptive threshold and a scoring mechanism that filters false positives.",
+      "I split capture and inference: the browser handles video, UI and alarms while a lightweight FastAPI service does pure geometry - fixed EAR below 0.25 and MAR above 0.75 thresholds, ratchet scoring that never decreases, a dismiss grace window and REST reset and dismiss controls.",
     features: [
       {
-        title: "Real-time Detection",
+        title: "Live Frame Streaming",
         description:
-          "30 FPS landmark tracking with instant drowsiness scoring per frame.",
+          "react-webcam pushes base64 JPEG frames over an auto-reconnecting WebSocket at ~10 FPS.",
         icon: "eye",
       },
       {
-        title: "Adaptive Thresholds",
+        title: "Face Mesh Metrics",
         description:
-          "Self-calibrating baselines that adapt to lighting and camera distance.",
+          "468-point MediaPipe mesh yields averaged left/right EAR plus yawn-aware MAR with NO_FACE handling.",
         icon: "gauge",
       },
       {
-        title: "Instant Alerts",
+        title: "Ratchet Scoring",
         description:
-          "Loud audible alarm and blinking visual overlay the moment fatigue is flagged.",
-        icon: "bell",
+          "Consecutive-frame counting builds a capped 0-100 score across NORMAL, WARNING and DROWSY bands.",
+        icon: "brain",
       },
       {
-        title: "Head Posture Analysis",
+        title: "Browser Alarms",
         description:
-          "Tracks head tilt and nodding to strengthen the drowsiness signal.",
-        icon: "brain",
+          "Looping siren, animated alert modal and colored landmark overlay, dismissible with a grace period.",
+        icon: "bell",
       },
     ],
     techStack: [
       "Python",
-      "OpenCV",
+      "FastAPI",
+      "WebSockets",
       "MediaPipe",
+      "OpenCV",
       "NumPy",
-      "Flask",
-      "Scipy",
+      "React",
+      "Vite",
     ],
     links: {
-      github: "https://github.com/Harshavardhan-10/drowsiness-detection",
+      github: "https://github.com/Harshavardhan-10/Driver-Drowsiness-Detection-System",
     },
   },
   {
     slug: "user-management",
     title: "User Management System",
-    tagline:
-      "Production-ready authentication, profiles and role-based access control.",
+    tagline: "Django authentication, rich profiles and a staff-only admin panel.",
     category: "Full-Stack",
     description:
-      "A complete auth & user management system with roles, sessions and audit logs.",
+      "A classic Django monolith covering registration, session auth, password reset, media-rich profiles and a staff-gated admin panel for managing users.",
     year: "2023",
     status: "Open Source",
     images: {
       primary: "/projects/user-management/application.png",
+      architecture: "/projects/user-management/architecture-flow.svg",
     },
     overview: [
-      "A battle-tested user management system covering the full lifecycle: registration, email verification, login, password reset, profile management, admin dashboards and role-based access control. It is built to be dropped into any product that needs secure accounts fast.",
-      "Security is the star: hashed passwords with bcrypt, httpOnly cookies for sessions, CSRF protection, rate limiting and a full audit log of administrative actions.",
+      "Built on Django 4.2 with server-rendered Bootstrap templates, this project covers the full account lifecycle: registration with auto-login, session-cookie authentication, password change and email-based reset using Django's signed tokens, profile pages with avatar uploads and social links, and self-service account deletion.",
+      "Administration is role-flagged rather than table-driven: a custom staff-only panel supports user search, creation, editing, deletion and ban/unban, layered with guards so staff cannot touch superusers and nobody can lock themselves out. A post-save signal automatically creates a Profile for every new User row.",
     ],
     problem:
-      "Rolling your own auth is error-prone teams repeatedly struggle with session security, token handling and role hierarchies, and boilerplate code slows down every new product.",
+      "Products need dependable account management without pulling in heavyweight identity providers - including safe password resets, media-rich profiles and simple staff tooling for moderating users.",
     solution:
-      "I built a reusable system with pluggable strategies (JWT + refresh tokens or cookie sessions), a permission engine that supports roles and granular scopes, and ready-to-use React screens for every flow.",
+      "I leaned on Django's batteries: PBKDF2 password hashing, CSRF-protected forms, signed-timestamped reset tokens and database-backed sessions, then added a custom admin_required decorator, superuser protection rules and validated profile fields that block javascript-style URLs.",
     features: [
       {
         title: "Complete Auth Flows",
         description:
-          "Signup, login, email verification, password reset and social OAuth.",
+          "Signup with auto-login, logout, password change and signed-token password reset emails.",
         icon: "key",
       },
       {
-        title: "Role-Based Access",
+        title: "Rich Profiles",
         description:
-          "Hierarchical roles with granular permission scopes for admins.",
+          "Avatar uploads via Pillow plus bio, phone and social links, auto-created by a post-save signal.",
         icon: "users",
       },
       {
-        title: "Admin Dashboard",
+        title: "Staff Admin Panel",
         description:
-          "User listing, search, ban/unban, role assignment and activity audit.",
+          "Searchable user list with create, edit, delete, deactivate and activate actions behind admin_required.",
         icon: "settings",
       },
       {
-        title: "Security First",
+        title: "Session-Hardened",
         description:
-          "bcrypt hashing, httpOnly sessions, CSRF protection and rate limits.",
+          "HttpOnly session cookie, CSRF tokens on every form, sliding expiry and never-cache view headers.",
         icon: "shield",
       },
     ],
-    techStack: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "JWT",
-      "bcrypt",
-      "Tailwind CSS",
-    ],
+    techStack: ["Django", "Python", "SQLite", "Django ORM", "Bootstrap 5", "Pillow"],
     links: {
-      github: "https://github.com/Harshavardhan-10/user-management",
+      github: "https://github.com/Harshavardhan-10/User_Management_System",
     },
   },
 ];

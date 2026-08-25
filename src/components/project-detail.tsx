@@ -215,13 +215,13 @@ export function ProjectDetail({ slug }: { slug: string }) {
             <h2 className="font-display text-2xl font-semibold tracking-tight">
               Architecture
             </h2>
-            <div className="relative mt-6 overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="relative mt-6 overflow-hidden rounded-2xl border border-border bg-white">
               <AppImage
                 src={project.images.architecture}
                 alt={`${project.title} - architecture diagram`}
-                width={1280}
-                height={720}
-                className="aspect-[16/9] w-full object-contain"
+                width={1000}
+                height={1220}
+                className="h-auto w-full"
               />
             </div>
           </div>

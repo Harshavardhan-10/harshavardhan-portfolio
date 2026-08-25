@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1220" viewBox="0 0 1000 1220" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#000"/>
+    </marker>
+  </defs>
+  <style>
+    .b{fill:#ffffff;stroke:#000000;stroke-width:1.5}
+    .t{fill:#000000;font-size:13px;font-weight:600;text-anchor:middle}
+    .s{fill:#000000;font-size:11px;text-anchor:middle}
+    .l{fill:#000000;font-size:11px}
+    .f{stroke:#000000;stroke-width:1.5;fill:none}
+  </style>
+
+  <rect x="0" y="0" width="1000" height="1220" fill="#ffffff"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#000">Smart Expense Manager</text>
+
+  <!-- L1 You -->
+  <rect class="b" x="380" y="92" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="116">You</text>
+  <text class="s" x="510" y="133">browser</text>
+
+  <!-- L2 React Screen -->
+  <rect class="b" x="380" y="204" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="228">React Screen</text>
+  <text class="s" x="510" y="245">Vite SPA · Chart.js</text>
+
+  <!-- L3 Login Gate -->
+  <rect class="b" x="380" y="316" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="340">Login Gate</text>
+  <text class="s" x="510" y="357">JWT bearer token</text>
+
+  <!-- L4 FastAPI API -->
+  <rect class="b" x="380" y="428" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="452">FastAPI API</text>
+  <text class="s" x="510" y="469">Pydantic validation</text>
+
+  <!-- L5 Services Layer -->
+  <rect class="b" x="380" y="540" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="564">Services Layer</text>
+  <text class="s" x="510" y="581">business rules · budget math</text>
+
+  <!-- L6 Money Store -->
+  <rect class="b" x="380" y="652" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="676">Money Store</text>
+  <text class="s" x="510" y="693">SQLAlchemy · SQLite / Postgres</text>
+
+  <!-- L7 ML Detectors -->
+  <rect class="b" x="380" y="764" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="788">ML Detectors</text>
+  <text class="s" x="510" y="805">recurring (3+ hits) · z-score anomaly</text>
+
+  <!-- L8 Insight Writer -->
+  <rect class="b" x="380" y="876" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="900">Insight Writer</text>
+  <text class="s" x="510" y="917">AIInsight rows · rules or AI</text>
+
+  <!-- L9 Analytics Builder -->
+  <rect class="b" x="380" y="988" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="1012">Analytics Builder</text>
+  <text class="s" x="510" y="1029">SQL totals · trends · budgets</text>
+
+  <!-- L10 Charts View -->
+  <rect class="b" x="380" y="1100" width="260" height="56" rx="8"/>
+  <text class="t" x="510" y="1124">Charts View</text>
+  <text class="s" x="510" y="1141">line · doughnut · bar</text>
+
+  <!-- main chain -->
+  <line class="f" x1="510" y1="148" x2="510" y2="200" marker-end="url(#a)"/>
+  <text class="l" x="500" y="180" text-anchor="end">open app</text>
+
+  <!-- auth pair 2 <-> 3 -->
+  <line class="f" x1="510" y1="260" x2="510" y2="312" marker-end="url(#a)"/>
+  <text class="l" x="500" y="292" text-anchor="end">send request</text>
+  <line class="f" x1="546" y1="316" x2="546" y2="264" marker-end="url(#a)"/>
+  <text class="l" x="556" y="292">token ok</text>
+
+  <line class="f" x1="510" y1="372" x2="510" y2="424" marker-end="url(#a)"/>
+  <text class="l" x="500" y="404" text-anchor="end">clean route</text>
+
+  <line class="f" x1="510" y1="484" x2="510" y2="536" marker-end="url(#a)"/>
+  <text class="l" x="500" y="516" text-anchor="end">call service</text>
+
+  <line class="f" x1="510" y1="596" x2="510" y2="648" marker-end="url(#a)"/>
+  <text class="l" x="500" y="628" text-anchor="end">save expense</text>
+
+  <line class="f" x1="510" y1="708" x2="510" y2="760" marker-end="url(#a)"/>
+  <text class="l" x="500" y="740" text-anchor="end">re-read history</text>
+
+  <line class="f" x1="510" y1="820" x2="510" y2="872" marker-end="url(#a)"/>
+  <text class="l" x="500" y="852" text-anchor="end">flag pattern</text>
+
+  <!-- analytics straight from store 6 -> 9 -->
+  <path class="f" d="M 380,680 H 240 V 1016 H 376" marker-end="url(#a)"/>
+  <text class="l" x="248" y="850">totals on demand</text>
+
+  <line class="f" x1="510" y1="1044" x2="510" y2="1096" marker-end="url(#a)"/>
+  <text class="l" x="500" y="1076" text-anchor="end">draw charts</text>
+
+  <!-- loop: category suggestion while typing 2 -> 4 -->
+  <path class="f" d="M 640,246 H 700 V 456 H 644" marker-end="url(#a)"/>
+  <text class="l" x="708" y="360">typing? suggest category</text>
+
+  <!-- loop: insights pop on screen 8 -> 2 -->
+  <path class="f" d="M 640,904 H 900 V 232 H 644" marker-end="url(#a)"/>
+  <text class="l" x="772" y="222" text-anchor="middle">insights show on screen</text>
+</svg>
