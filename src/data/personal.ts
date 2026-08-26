@@ -11,8 +11,7 @@
   ],
   location: "Bengaluru, India",
   email: "harsha.dev@example.com",
-  availability: "Open to full-time & freelance opportunities",
-  avatar: "/profile/profile.jpg",
+  avatar: "/profile/profile.png",
   resumeUrl: "/resume.pdf",
   githubUsername: "Harshavardhan-10",
   socials: {

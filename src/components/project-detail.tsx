@@ -100,7 +100,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
               alt={`${project.title} - main view`}
               width={1280}
               height={720}
-              className="aspect-[16/9] w-full object-cover"
+              className="aspect-[16/9] w-full object-contain"
               priority
             />
           </div>

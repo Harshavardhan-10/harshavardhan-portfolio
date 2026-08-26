@@ -33,7 +33,7 @@ export const projects: Project[] = [
     year: "2026",
     status: "Open Source",
     images: {
-      primary: "/projects/wiseweb-ai/dashboard.png",
+      primary: "/projects/wiseweb-ai/application.png",
       architecture: "/projects/wiseweb-ai/architecture-flow.svg",
     },
     overview: [

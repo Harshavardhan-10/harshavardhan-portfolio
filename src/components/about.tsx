@@ -48,13 +48,14 @@ export default function About() {
                 width={440}
                 height={500}
                 className="aspect-[4/4.6] w-full rounded-[1.4rem] object-cover"
+                priority
               />
               <div className="glass absolute inset-x-6 bottom-6 flex items-center justify-between rounded-2xl px-5 py-4">
                 <div>
-                  <p className="font-display text-sm font-semibold">
+                  <p className="font-display text-sm font-semibold text-foreground">
                     {personal.name}
                   </p>
-                  <p className="text-xs text-muted">{personal.role}</p>
+                  <p className="text-xs text-foreground/70">{personal.role}</p>
                 </div>
                 <Badge variant="success">Open to work</Badge>
               </div>

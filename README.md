@@ -56,7 +56,7 @@ Personal details, experience, skills and projects are all data-driven — edit t
 
 Place your images in `public/`:
 
-- `public/profile/profile.jpg` — profile picture
+- `public/profile/profile.png` — profile picture
 - `public/projects/<project-slug>/` — project preview images
 - `public/resume.pdf` — downloadable resume
 

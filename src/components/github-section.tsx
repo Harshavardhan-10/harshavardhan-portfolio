@@ -33,18 +33,21 @@ export default function GithubSection() {
 
   useEffect(() => {
     const username = personal.githubUsername;
-    if (!username || username === "Harshavardhan-10") return;
+    if (!username) return;
 
     fetch(
-      `https://api.github.com/users/${username}/repos?sort=updated&per_page=8`,
+      `https://api.github.com/users/${username}/repos?sort=updated&per_page=10`,
       { headers: { Accept: "application/vnd.github+json" } }
     )
       .then((res) => (res.ok ? res.json() : Promise.reject(new Error("failed"))))
       .then((data: Repo[]) => {
-        const top = [...data]
-          .filter((r) => !r.fork)
-          .sort((a, b) => b.stargazers_count - a.stargazers_count)
-          .slice(0, 3);
+        const filtered = data.filter((r) => !r.fork);
+        const wiseweb = filtered.find((r) => r.name === "Wiseweb-AI");
+        const spendrax = filtered.find((r) => r.name === "Spentrax");
+        const rest = filtered
+          .filter((r) => r.name !== "Wiseweb-AI" && r.name !== "Spentrax")
+          .sort((a, b) => b.stargazers_count - a.stargazers_count);
+        const top = [wiseweb, spendrax, ...rest].filter(Boolean).slice(0, 3);
         setRepos(top);
       })
       .catch(() => setError(true));

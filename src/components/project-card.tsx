@@ -17,7 +17,7 @@ export function ProjectCard({ project }: { project: Project }) {
           alt={`${project.title} preview`}
           width={640}
           height={400}
-          className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          className="aspect-video w-full object-contain transition-transform duration-500 group-hover:scale-[1.04]"
         />
         <div className="absolute left-4 top-4">
           <Badge variant="default" className="backdrop-blur-md">
