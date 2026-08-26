@@ -47,7 +47,7 @@ export default function GithubSection() {
         const rest = filtered
           .filter((r) => r.name !== "Wiseweb-AI" && r.name !== "Spentrax")
           .sort((a, b) => b.stargazers_count - a.stargazers_count);
-        const top = [wiseweb, spendrax, ...rest].filter(Boolean).slice(0, 3);
+        const top = [wiseweb, spendrax, ...rest].filter((r): r is Repo => !!r).slice(0, 3);
         setRepos(top);
       })
       .catch(() => setError(true));
