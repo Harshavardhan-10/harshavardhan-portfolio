@@ -10,7 +10,7 @@
     "I care deeply about clean code, performance and accessibility. Whether it is a real-time dashboard, a computer-vision pipeline or a secure authentication system, I approach every project with the same obsession for quality.",
   ],
   location: "Bengaluru, India",
-  email: "harsha.dev@example.com",
+  email: "rharsha102002@gmail.com",
   avatar: "/profile/profile.png",
   resumeUrl: "/resume.pdf",
   githubUsername: "Harshavardhan-10",
