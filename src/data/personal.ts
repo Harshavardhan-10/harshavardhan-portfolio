@@ -2,12 +2,12 @@
   name: "Harshavardhan",
   role: "Full-Stack Developer",
   tagline:
-    "I build fast, accessible and beautiful products for the web from pixel-perfect interfaces to robust backends.",
+    "I build scalable, user-focused applications across the stack, combining modern web technologies, clean code and AI-driven solutions to turn ideas into real-world products.",
   shortBio:
-    "Full-stack developer with 2+ years of experience crafting scalable web apps, RESTful APIs and machine-learning prototypes.",
+    "Full-stack developer with 3+ years of experience crafting scalable web apps, RESTful APIs and machine-learning prototypes.",
   bio: [
-    "I am a passionate full-stack developer who loves turning complex problems into simple, elegant and delightful digital experiences. My journey started with a curiosity for how the web works, and today I build production-ready applications end to end.",
-    "I care deeply about clean code, performance and accessibility. Whether it is a real-time dashboard, a computer-vision pipeline or a secure authentication system, I approach every project with the same obsession for quality.",
+    "I’m a passionate software developer who enjoys building practical, scalable and user-focused applications. With experience across Java, Spring Boot, Python, React, Django and SQL, I work across the stack to turn ideas into reliable digital solutions.",
+    "I’m particularly interested in full-stack development, backend engineering and AI-powered applications. From secure user management systems and expense tracking platforms to machine-learning projects, I focus on writing clean code, solving problems effectively and continuously improving my technical skills.",
   ],
   location: "Bengaluru, India",
   email: "rharsha102002@gmail.com",
