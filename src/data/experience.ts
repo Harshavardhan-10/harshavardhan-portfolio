@@ -16,13 +16,13 @@ export const experiences: Experience[] = [
     period: "2023 - Present",
     location: "Bengaluru, India",
     description:
-      "Designing and shipping end-to-end web products for startups and small businesses.",
+      "Developing and maintaining enterprise insurance applications for HDFC Life, with a focus on payment processing, policy validation, API integration, and production support.",
     highlights: [
-      "Built a smart expense-tracking SaaS with real-time dashboards serving 1k+ monthly users.",
-      "Reduced page load times by 45% through code-splitting, caching and image optimization.",
-      "Delivered authentication, payment and admin systems with role-based access control.",
+      "Developed and maintained policy premium payment workflows involving policy validation, payment verification, reconciliation, and receipt generation.",
+      "Delivered 12+ business requirements, including WhatsApp payments, new payment mode integrations, Loan Against Payment, JWT authentication, rate limiting, and policy validations.",
+      "Automated 3 daily transaction reports and failed-posting retry batches, saving 2–3 hours daily while optimizing SQL queries and payment processing performance.",
     ],
-    tech: ["Java", "Spring Boot", "Oracle DB", "React"],
+    tech: ["Java", "Spring Boot", "Oracle DB", "AWS", "RESTFul APIs", "IBM Integration Designer"],
     current: true,
   },
   // {
