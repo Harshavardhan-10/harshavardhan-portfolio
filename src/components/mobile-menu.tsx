@@ -61,7 +61,7 @@ export default function MobileMenu({
               style={{ transitionDelay: `${i * 30}ms` }}
             >
               {link.label}
-              <span className="text-xs text-violet-600 dark:text-violet-400/60">â†’</span>
+              <span className="text-xs text-violet-600 dark:text-violet-400/60">+</span>
             </a>
           ))}
         </nav>
